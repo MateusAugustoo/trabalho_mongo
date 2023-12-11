@@ -15,26 +15,24 @@ async function main() {
     }); 
     const Carro = mongoose.model('carro', CarSchema);
 
-    const car1 = new Carro({
-        marca: "Honda",
-        modeloCar: "Civic",
-        ano: 2023,
-        preco: 124000,
-        usado_novo: "Novo"
+        const carro1 = new Carro({
+            marca: 'Honda',
+            modeloCar: 'Civic',
+            ano: 2024,
+            preco: 174000,
+            usado_novo: 'Novo'
+        });
 
-    });
+        // Adicionando!!
+        // await carro1.save();
 
-    const car2 = new Carro({
-        marca: "Fiat",
-        modeloCar:"Uno",
-        ano: 1970,
-        preco: 10000,
-        usado_novo: "Usado"
-    })
-    
-    await Carro.deleteOne({marca: "Fiat"});
-    
+        // Excluindo!!
+        // await Carro.deleteOne({marca: 'Fiat'});
 
-    const carro = await (mongoose.model('carro', CarSchema)).find();
-    console.log(carro)
+        // Atualizando!!
+        // await Carro.updateOne({marca: 'Honda'}, {modeloCar: 'HGV - 1'});
+
+        // Listando!!
+        const carro = await (mongoose.model('carro', CarSchema)).find();
+        console.log(carro);
 }
